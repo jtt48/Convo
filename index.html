@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="js-yaml.min.js"></script>
+<script src="yaml.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<html>
+<body>
+  <center>
+<img src ="convo1.png">
+<p>
+<i>A solo rpg tool for generating conversations with yourself...</i>
+</p>
+<div>
+
+  <div style="clear: both;">
+      <h3>-----Mood-----</h3>
+<b class="alignleft">Hate</b>
+<b class="alignright">Love</b>
+  <div class="slidecontainer">
+    <input type="range" min="-10" max="10" value="0" class="slider" id="myRange">
+  </div>
+</div>
+<p></p>
+  <button id="moodbutton">Roll</button>
+</div>
+<div>
+  <table width="50%">
+    <tr>
+      <th>Intent</th>
+      <th>Tactic</th>
+    </tr>
+    <tr>
+      <td id="intent"></td>
+      <td id="tactic"></td>
+    </tr>
+  </table>
+</div>
+</center>
+</body>
+</html>
+
+<script>
+
+/* Crappy Design Doc
+
+User gets to set an Agresssion Setting for the person they are talking to.
+Agression should dictate the likelyhood of certain roles occuring.
+If someone is neutral then they should just be as likely to want to kill you as
+they are to kiss you. This is unlikely and so the default and recomended values
+should be more in one direction or the other.
+
+The Agression value is just a number. +10 is they love you -10 is they hate you.
+This value will be used to roll 2 d(x)s. ! die determins their intent, the
+other determins how they plan to go about it.
+
+The full rolling spectrum is between -20 and 20. The mood making extreams
+less ore more likely.
+
+there are 6 tables in this range. 0-4, 5-9, 10-19, 20-24, 25-28  and the negative versions.
+when a table is selected by the orignal roll. A new roll is done for the table
+there is no mod for this roll
+
+The die needs to roll between 9-20. Negatives numbers like the original plan
+are a pain... so were staying with positive digits. Will need to leave good
+comments because this is not intuitive.
+
+TODO: find a better easier to understand dice rolling range and method.
+
+TODO: Add in usefull features like toggles for: No hate options,
+no love options, no extreams, no middle grounds, etc.
+
+ */
+
+//--------listner------------------
+document.getElementById("moodbutton").addEventListener("click", rollIntent);
+
+//----- tables --------------
+var doc = jsyaml.load(yaml);
+console.log(doc);
+
+ //------roll-----------------
+ function rollIntent ()
+ {
+   // have to cast mood as a Number. I belive this is because its reading in
+   // negative numbers as strings be default.
+   var mood  = Number(document.getElementById("myRange").value);
+   console.log("mood is: " + mood);
+   //console.log("wtf");
+   var selection = (Math.floor((Math.random()) * Math.floor(12)+ 9 + (mood)));
+      console.log("Selection: " + selection);
+
+if(selection < 5)
+{
+  document.getElementById("intent").innerHTML = doc.hate[(Math.floor(Math.random() * Math.floor(doc.hate.length)))];
+}
+
+if(selection >= 5 && selection <= 9)
+{
+  document.getElementById("intent").innerHTML = doc.dislike[(Math.floor(Math.random() * Math.floor(doc.dislike.length)))];
+}
+
+if(selection >= 10 && selection <= 19)
+{
+    document.getElementById("intent").innerHTML = doc.neutral[(Math.floor(Math.random() * Math.floor(doc.neutral.length)))];
+}
+
+if(selection >= 20 && selection <= 24)
+{
+    document.getElementById("intent").innerHTML = doc.like[(Math.floor(Math.random() * Math.floor(doc.like.length)))];
+}
+
+if(selection >= 25)
+{
+    document.getElementById("intent").innerHTML = doc.love[(Math.floor(Math.random() * Math.floor(doc.love.length)))];
+}
+
+   rollTactic ();
+ }
+
+ function rollTactic ()
+ {
+  var tactics = doc.tactics;
+  //console.log(tactics);
+  var selection = (Math.floor(Math.random() * Math.floor(tactics.length)));
+  console.log(tactics[selection]);
+  document.getElementById("tactic").innerHTML = tactics[selection];
+ }
+
+
+</script>
