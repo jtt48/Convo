@@ -12,39 +12,39 @@ hate:
 - They want to hurt you as much as possible
 - They want to make you doubt yourself
 - They want to make you doubt your beliefs
-- They want to get you to give them a reason to hurt you
+- They want you to give them a reason to hurt you
 - They want to get you to sign your own death warrant
 
 #5 -> 9
 dislike:
-- They want to get you to grow away from them
-- They want to get you to not talk to someone
-- They want to get you to not talk about something
-- They want to get you to not talk to them
-- They want to get you to go away
-- They want to get you to do something dangerous for them
+- They want to upset you
+- They want you to not talk to someone
+- They want you to not talk about something
+- They want you to not talk to them
+- They want you to go away
+- They want you to do something dangerous for them
 
 #10 -> 19
 neutral:
-- They want to get you to open up
-- They want to get you to tell them the truth about something
-- They want to get you to explain yourself
-- They want to get you to talk about something they enjoy
-- They want to get you to talk about something you hate
-- They want to get you to talk about a recent event
-- They want to get you to talk about your past
-- They want to get you to examine something they have
-- They want to get you to guess about the future
-- They want to get you to talk about someone else
-- They want to get you to go with them somewhere
-- They want to get you to make a judgment
-- They want to get you to talk to someone else
-- They want to get you to do something for them
+- They want you to open up
+- They want you to tell them the truth about something
+- They want you to explain yourself
+- They want you to talk about something they enjoy
+- They want to talk about something you hate
+- They want you to talk about a recent event
+- They want you to talk about your past
+- They want you to examine something they have
+- They want you to guess about the future
+- They want you to talk about someone else
+- They want you to go with them somewhere
+- They want you to make a judgment
+- They want you to talk to someone else
+- They want you to do something for them
 
 
 #20 -> 24
 like:
-- They want to get you to grow closer to them
+- They want you to grow closer to them
 - They want to ask for your advice about a problem with a relationship
 - They want to ask for your advice about a problem
 - They want to ask if you need help
@@ -54,8 +54,8 @@ like:
 
 #25 -> infinity
 love:
-- They want to get you to flirt with them
-- They want to get you to kiss them
+- They want you to flirt with them
+- They want you to kiss them
 - They want to get you to spend more time with them
 - They want to get you to do something meaningful for them
 - They want to get you to let them help you
