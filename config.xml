@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Convo App</name>
+    <name>Convo</name>
     <description>
-        A blank PhoneGap app.
+        An app for generating conversations with yourself.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="zylofan@yahoo.com" href="">
+          Zylo
     </author>
     <content src="index.html" />
     <access origin="*" />
